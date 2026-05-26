@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min Sanning — Anteckningar från en kristen far | Goran Matohanac</title>
+  <meta name="description" content="Min Sanning av Goran Matohanac. En samhällskritisk fackbok skriven som ett vittnesbörd. Boken är fri och kan laddas ner gratis.">
+
+  <!-- Open Graph (för delning på sociala media, även om du själv inte använder dem) -->
+  <meta property="og:title" content="Min Sanning — Anteckningar från en kristen far">
+  <meta property="og:description" content="En bok skriven som ett vittnesbörd. Fri att ladda ner och sprida.">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://minsanning.se/">
+  <meta property="og:image" content="https://minsanning.se/cover_sv.png">
+
+  <!-- Typsnitt: serif för rubriker (EB Garamond, matchar bokens brödtext), sans för UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #1e3a5f;     /* Mörkblå, matchar omslaget */
+      --accent-light: #eef2f7;
+      --border: #e0e0e0;
+      --max-width: 680px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    /* Språkväxling */
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      font-size: 14px;
+      color: var(--muted);
+      z-index: 10;
+    }
+    .lang-switch a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+    }
+    .lang-switch a:hover {
+      color: var(--accent);
+    }
+    .lang-switch a.active {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Hjältesektion */
+    .hero {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+
+    .hero h1 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+
+    .hero .subtitle {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .author {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    /* Sektionsrubriker */
+    h2 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Citatsektion */
+    .quotes {
+      margin: 3rem 0;
+    }
+
+    .quote {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      line-height: 1.5;
+      color: var(--text);
+      padding: 1.5rem 0;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Nedladdningssektion */
+    .downloads {
+      background: var(--accent-light);
+      padding: 2rem;
+      border-radius: 4px;
+      margin: 2rem 0;
+    }
+
+    .downloads h3 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .download-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .download-list a {
+      display: block;
+      padding: 0.75rem 1rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      font-size: 0.95rem;
+    }
+
+    .download-list a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .download-list .filesize {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+    }
+
+    @media (max-width: 540px) {
+      .download-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Speglar */
+    .mirrors {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .mirrors h4 {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .mirrors ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .mirrors a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .mirrors a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Allmänna länkar */
+    a {
+      color: var(--accent);
+    }
+
+    /* Pressmaterial */
+    .press-resources {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .press-resources li {
+      margin-bottom: 0.5rem;
+    }
+
+    .press-resources a::before {
+      content: "→ ";
+      color: var(--muted);
+    }
+
+    /* Stöd-sektion */
+    .support {
+      margin-top: 4rem;
+    }
+
+    .support-options {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .support-options li {
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+    }
+
+    .support-options li::before {
+      content: "— ";
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 6rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Bryggrad (katolik-bryggan, framträdande citat) */
+    .bridge {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--accent);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Cover-bild */
+    .cover-wrap {
+      text-align: center;
+      margin: 2rem 0 3rem;
+    }
+
+    .cover-wrap img {
+      max-width: 220px;
+      height: auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 540px) {
+      .container { padding: 3rem 1.25rem; }
+      .hero h1 { font-size: 2.25rem; }
+      .hero .subtitle { font-size: 1.1rem; }
+      h2 { font-size: 1.5rem; margin-top: 3rem; }
+      .quote { font-size: 1.15rem; padding-left: 1rem; }
+      body { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Språkväxling längst upp till höger -->
+  <div class="lang-switch">
+    <a href="/" class="active">SV</a> |
+    <a href="/en/">EN</a>
+  </div>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Min Sanning</h1>
+      <p class="subtitle">Anteckningar från en kristen far</p>
+      <p class="author">Goran Matohanac</p>
+    </section>
+
+    <!-- Cover (valfri — kommentera ut om du inte vill ha den) -->
+    <div class="cover-wrap">
+      <img src="/cover_sv.png" alt="Min Sanning - Omslag">
+    </div>
+
+    <!-- Citat-sektion: tre korta utdrag som doftprov -->
+    <section class="quotes">
+      <p class="quote">
+        Jag skriver inte för att bli omtyckt. Jag skriver för att jag är skyldig att göra det.
+      </p>
+      <p class="quote">
+        Sanning skavar. Den som inte tål det, ska inte läsa vidare.
+      </p>
+      <p class="quote">
+        Jag är katolik. Det jag säger om sanningen tillhör dock varje kristen som tar sin tro på allvar.
+      </p>
+    </section>
+
+    <!-- Nedladdning -->
+    <section class="downloads">
+      <h3>Ladda ner</h3>
+      <ul class="download-list">
+        <li><a href="/files/MinSanning_Sv.pdf">Svenska — PDF <span class="filesize">2,4 MB</span></a></li>
+        <li><a href="/files/MinSanning_Sv.epub">Svenska — EPUB <span class="filesize">450 KB</span></a></li>
+        <li><a href="/files/MyTruth_En.pdf">English — PDF <span class="filesize">2,5 MB</span></a></li>
+        <li><a href="/files/MyTruth_En.epub">English — EPUB <span class="filesize">480 KB</span></a></li>
+      </ul>
+
+      <div class="mirrors">
+        <h4>Spegelkopior</h4>
+        <ul>
+          <li><a href="https://archive.org/details/min-sanning-matohanac">Archive.org</a></li>
+          <li><a href="https://github.com/goranmatohanac/min-sanning">GitHub</a></li>
+          <li><a href="ipfs://...">IPFS</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Om boken -->
+    <section>
+      <h2>Om boken</h2>
+      <p>Det här är ingen lätt bok. Den är lång, hård, och ibland skoningslös. Skriven för den som orkar stå kvar när sanningen skaver.</p>
+      <p>Söker du bekräftelse eller feelgood — läs något annat.</p>
+      <p>Boken är ett vittnesbörd, inte ett opinionsbidrag. Den är skriven som ett kall, mottaget under bön. Den lämnar mig nu för att gå vidare till den som behöver den.</p>
+    </section>
+
+    <!-- Bryggrad (visuellt accentuerad, från Om denna bok) -->
+    <p class="bridge">
+      Jag är katolik. Det jag säger om sanningen tillhör dock<br>
+      varje kristen som tar sin tro på allvar.
+    </p>
+
+    <!-- Sprid -->
+    <section>
+      <h2>Sprid</h2>
+      <p>Sprid boken vidare. Ändra inte texten. Respektera licensen.</p>
+      <p>Boken är fri under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.sv">CC BY-NC-ND 4.0</a>.</p>
+
+      <h3 style="font-family:'EB Garamond',Georgia,serif;font-size:1.15rem;color:var(--accent);margin-top:2rem;margin-bottom:0.75rem;">Pressmaterial</h3>
+      <ul class="press-resources">
+        <li><a href="/press/cover_sv.png">Omslag svenska (PNG, hög upplösning)</a></li>
+        <li><a href="/press/cover_en.png">Omslag engelska (PNG, hög upplösning)</a></li>
+        <li><a href="/press/beskrivning_kort.txt">Kort beskrivning (för delning)</a></li>
+        <li><a href="/press/beskrivning_lang.txt">Lång beskrivning</a></li>
+        <li><a href="/press/forfattarbio.txt">Författarbio</a></li>
+      </ul>
+    </section>
+
+    <!-- Kontakt -->
+    <section>
+      <h2>Kontakt</h2>
+      <p>För seriös respons, frågor om översättning eller behov av annat format:</p>
+      <p><a href="mailto:goran@minsanning.se">goran@minsanning.se</a></p>
+      <p style="color:var(--muted);font-size:0.9rem;margin-top:1rem;">Jag läser allt men svarar inte alltid omgående.</p>
+    </section>
+
+    <!-- Stöd (sist, diskret) -->
+    <section class="support">
+      <h2>Stöd</h2>
+      <p>Boken är gratis och kommer alltid att vara det. Det är ingen retorisk gest.</p>
+      <p>Gav den dig något — och vill du bidra till nästa?</p>
+      <ul class="support-options">
+        <li>Be för författaren och hans döttrar.</li>
+        <li>Ge en kopia till någon som behöver den.</li>
+        <li>Stöd ekonomiskt om du har utrymme.</li>
+      </ul>
+      <p style="margin-top:1.5rem;">Donationer går till nästa bok — inte denna.</p>
+      <p style="margin-top:1rem;">
+        <a href="https://swish.me/...">Swish</a> ·
+        <a href="https://ko-fi.com/...">Ko-fi</a> ·
+        <a href="https://stripe.com/...">Stripe</a>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© Goran Matohanac, Logos förlag, 2026</p>
+      <p>Licens: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.sv">CC BY-NC-ND 4.0</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
