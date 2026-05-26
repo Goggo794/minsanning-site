@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Truth</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --btn-bg: #ececec;
+            --btn-hover: #d4d4d4;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        p.description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #444;
+        }
+
+        .downloads {
+            margin-bottom: 50px;
+        }
+
+        .lang-group {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .lang-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-color);
+            background-color: var(--btn-bg);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--btn-hover);
+        }
+
+        .kofi-section {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #1a1a1a;
+            font-size: 0.95rem;
+        }
+
+        .kofi-section p {
+            margin: 0;
+        }
+
+        a.kofi-link {
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        a.kofi-link:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Byt ut till din boktitel -->
+    <h1>My Truth</h1>
+    
+    <!-- Din korta, raka beskrivning -->
+    <p class="description">
+        Write your short and informative description here. Straight to the point. No fluff.
+    </p>
+
+    <div class="downloads">
+        <!-- Engelsk sektion -->
+        <div class="lang-group">
+            <h2>English Version (Free)</h2>
+            <div class="btn-container">
+                <a href="LÄNK_TILL_ENGELSK_BOK.pdf" class="btn" target="_blank">Download PDF</a>
+                <a href="LÄNK_TILL_ENGELSK_BOK.epub" class="btn" target="_blank">Download EPUB</a>
+            </div>
+        </div>
+
+        <!-- Svensk sektion -->
+        <div class="lang-group">
+            <h2>Swedish Version (Free)</h2>
+            <div class="btn-container">
+                <a href="LÄNK_TILL_SVENSK_BOK.pdf" class="btn" target="_blank">Download PDF</a>
+                <a href="LÄNK_TILL_SVENSK_BOK.epub" class="btn" target="_blank">Download EPUB</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ko-fi sektion -->
+    <div class="kofi-section">
+        <p>
+            Did you get something out of this book? Buy me a coffee via <a href="DIN_KOFI_LÄNK_HÄR" class="kofi-link" target="_blank">Ko-fi</a>. Or don't – that's not why it was written.
+        </p>
+    </div>
+
+</body>
+</html>
